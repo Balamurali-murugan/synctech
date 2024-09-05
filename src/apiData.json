@@ -1,0 +1,144 @@
+{
+    "response_payload": {
+        "loginResponse_for_landlord": {
+            "user": {
+                "id": 45,
+                "name": "",
+                "contact": ""
+            },
+            "isLandlord": true,
+            "apartments": []
+        },
+        "loginResponse_for_serviceProvider": {
+            "user": {
+                "id": 23,
+                "name": "",
+                "contact": ""
+            },
+            "isServiceProvider": true,
+            "charges": {
+                "perKm": 13,
+                "perLitre": 40
+            },
+            "pastHistory": [
+                {
+                    "booking_id": 23,
+                    "dateTime": "23-09-2024 11:20:22",
+                    "apartment": {
+                        "id": 89,
+                        "address": "test address",
+                        "contact": 987654321
+                    },
+                    "serviceProvider": {
+                        "id": 23,
+                        "name": "xxx",
+                        "contact": 988682
+                    },
+                    "booked_by": "xxx",
+                    "noOfLitres": 3000,
+                    "payment": {
+                        "txn_id": 1,
+                        "amount": 3000,
+                        "payment_mode": "upi"
+                    }
+                }
+            ]
+        },
+        "loginResponse_for_residents": {
+            "user": {
+                "id": 34,
+                "name": "xxxx",
+                "address": "",
+                "contact": 987654321
+            },
+            "accessRoles": "ROLE_VIEW",
+            "isResident": true,
+            "apartment": {
+                "id": 89,
+                "address": "test address",
+                "contact": 987654321
+            },
+            "pastHistory": [
+                {
+                    "booking_id": 23,
+                    "dateTime": "23-09-2024 11:20:22",
+                    "apartment": {
+                        "address": "test address",
+                        "contact": 987654321
+                    },
+                    "serviceProvider": {
+                        "name": "xxx",
+                        "contact": 988682
+                    },
+                    "booked_by": "xxx",
+                    "noOfLitres": 3000,
+                    "payment": {
+                        "txn_id": 1,
+                        "amount": 3000,
+                        "payment_mode": "upi"
+                    }
+                }
+            ],
+            "landlordDetails": {
+                "landlord_id": 11,
+                "name": "xxxx",
+                "contact": 978263e8
+            },
+            "expense": {
+                "owe": [
+                    {
+                        "name": "shubham",
+                        "price": 300
+                    },
+                    {
+                        "name": "udb",
+                        "price": 200
+                    }
+                ],
+                "owed": [
+                    {
+                        "name": "arun",
+                        "price": 3000
+                    },
+                    {
+                        "name": "Shaks",
+                        "price": 2000
+                    }
+                ]
+            }
+        }
+    },
+    "request_payload": {
+        "landlord_registration": {
+            "isLandlord": "true",
+            "user": {
+                "userid": "",
+                "mail": "",
+                "password": "",
+                "contact": ""
+            },
+            "apartment": {
+                "name": "",
+                "address": "",
+                "no_of_flats": "",
+                "tank_capacity": "",
+                "state": "",
+                "country": "",
+                "pincode": "",
+                "contact": ""
+            }
+        },
+        "residents_registration": {
+            "isResident": "true",
+            "user": {
+                "userid": "",
+                "mail": "",
+                "password": "",
+                "contact": ""
+            },
+            "apartmentId": 23,
+            "no_of_family_members": 3,
+            "flat_no": 303
+        }
+    }
+}
