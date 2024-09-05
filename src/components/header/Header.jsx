@@ -1,5 +1,5 @@
 // components/header/Header.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome, FaSignOutAlt } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,20 +10,25 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [isLogout,setIsLoggedOut] = useState(false);
+
   const handleLogout = () => {
+    setIsLoggedOut(true);
     dispatch(fetchLoginDetailsSuccess({})); // Action to clear login response
   };
 
   const loginResponse = useSelector((state) => state.loginReducer.loginResponse);
 
   useEffect(()=>{
-   console.log(loginResponse);
+   setIsLoggedOut(false);
+  },[]);
 
-   if(loginResponse && Object.keys(loginResponse).length === 0)
+  useEffect(()=>{
+   if(loginResponse && Object.keys(loginResponse).length === 0 && isLogout)
    {
     navigate('/login');
    }
-  },[loginResponse])
+  },[loginResponse]);
 
 
 
